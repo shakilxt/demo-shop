@@ -13,6 +13,10 @@ export default async function ProductDetails({ params }) {
         notFound();
     }
 
+    if (!product) {
+        notFound();
+    }
+
     return (
         <div className='bg-stone-50 min-h-screen'>
             <main className="max-w-5xl mx-auto p-8 flex flex-col md:flex-row gap-12 mt-10">
