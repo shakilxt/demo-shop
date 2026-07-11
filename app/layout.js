@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainHeader from "@/components/ui/main-header/main-header";
-import { Suspense } from "react";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -26,9 +25,7 @@ export default function RootLayout({ children }) {
         >
             <body className="bg-stone-50 min-h-full flex flex-col">
 
-                <Suspense>
-                    <MainHeader />
-                </Suspense>
+                <MainHeader />
 
                 {children}
 
