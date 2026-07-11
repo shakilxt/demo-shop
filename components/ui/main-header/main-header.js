@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import NavLink from "./nav-link";
 
 export default function MainHeader() {
@@ -28,43 +28,43 @@ export default function MainHeader() {
                     >
                         <span className="relative block h-4 w-5">
                             <span
-                                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${isOpen ? "translate-y-2 rotate-45" : ""
-                                    }`}
+                                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${
+                                    isOpen ? "translate-y-2 rotate-45" : ""
+                                }`}
                             />
                             <span
-                                className={`absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${isOpen ? "opacity-0" : "opacity-100"
-                                    }`}
+                                className={`absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${
+                                    isOpen ? "opacity-0" : "opacity-100"
+                                }`}
                             />
                             <span
-                                className={`absolute left-0 top-3 h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${isOpen ? "-translate-y-2 -rotate-45" : ""
-                                    }`}
+                                className={`absolute left-0 top-3 h-0.5 w-5 rounded-full bg-current transition-transform duration-200 ${
+                                    isOpen ? "-translate-y-2 -rotate-45" : ""
+                                }`}
                             />
                         </span>
                     </button>
 
-                    <Suspense>
-                        <nav className="hidden items-center gap-6 md:flex">
-                            <NavLink href="/">All Products</NavLink>
-                            <NavLink href="/brands">Featured Brands</NavLink>
-                        </nav>
-                    </Suspense>
+                    <nav className="hidden items-center gap-6 md:flex">
+                        <NavLink href="/">All Products</NavLink>
+                        <NavLink href="/brands">Featured Brands</NavLink>
+                    </nav>
                 </div>
 
                 <nav
                     id="mobile-navigation"
-                    className={`md:hidden overflow-hidden border-t border-stone-100 transition-[max-height,opacity] duration-200 ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                        }`}
+                    className={`md:hidden overflow-hidden border-t border-stone-100 transition-[max-height,opacity] duration-200 ${
+                        isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
-                    <Suspense>
-                        <div className="flex flex-col gap-3 py-4">
-                            <NavLink href="/" onNavigate={() => setIsOpen(false)}>
-                                All Products
-                            </NavLink>
-                            <NavLink href="/brands" onNavigate={() => setIsOpen(false)}>
-                                Featured Brands
-                            </NavLink>
-                        </div>
-                    </Suspense>
+                    <div className="flex flex-col gap-3 py-4">
+                        <NavLink href="/" onNavigate={() => setIsOpen(false)}>
+                            All Products
+                        </NavLink>
+                        <NavLink href="/brands" onNavigate={() => setIsOpen(false)}>
+                            Featured Brands
+                        </NavLink>
+                    </div>
                 </nav>
             </div>
 
