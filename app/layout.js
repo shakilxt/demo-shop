@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainHeader from "@/components/ui/main-header/main-header";
-import HeaderFallback from "@/components/ui/main-header/header-fallback";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -18,14 +17,12 @@ export default function RootLayout({ children }) {
 
             <body className="bg-stone-50 min-h-full flex flex-col">
 
-                <Suspense fallback={<HeaderFallback />}>
-                    <MainHeader />
-                </Suspense>
+                <MainHeader />
 
                 {children}
 
             </body>
-            
+
         </html>
     );
 }

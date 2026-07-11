@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./nav-link";
+import { Suspense } from "react";
 
 export default function MainHeader() {
 
@@ -39,26 +40,29 @@ export default function MainHeader() {
                         </span>
                     </button>
 
-                    <nav className="hidden items-center gap-6 md:flex">
-                        <NavLink href="/">All Products</NavLink>
-                        <NavLink href="/brands">Featured Brands</NavLink>
-                    </nav>
+                    <Suspense>
+                        <nav className="hidden items-center gap-6 md:flex">
+                            <NavLink href="/">All Products</NavLink>
+                            <NavLink href="/brands">Featured Brands</NavLink>
+                        </nav>
+                    </Suspense>
                 </div>
 
                 <nav
                     id="mobile-navigation"
-                    className={`md:hidden overflow-hidden border-t border-stone-100 transition-[max-height,opacity] duration-200 ${
-                        isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                    }`}
+                    className={`md:hidden overflow-hidden border-t border-stone-100 transition-[max-height,opacity] duration-200 ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                        }`}
                 >
-                    <div className="flex flex-col gap-3 py-4">
-                        <NavLink href="/" onNavigate={() => setIsOpen(false)}>
-                            All Products
-                        </NavLink>
-                        <NavLink href="/brands" onNavigate={() => setIsOpen(false)}>
-                            Featured Brands
-                        </NavLink>
-                    </div>
+                    <Suspense>
+                        <div className="flex flex-col gap-3 py-4">
+                            <NavLink href="/" onNavigate={() => setIsOpen(false)}>
+                                All Products
+                            </NavLink>
+                            <NavLink href="/brands" onNavigate={() => setIsOpen(false)}>
+                                Featured Brands
+                            </NavLink>
+                        </div>
+                    </Suspense>
                 </nav>
             </div>
 
