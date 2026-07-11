@@ -5,7 +5,7 @@ export default function ProductCard({ product, index }) {
     return (
         <Link href={`/${product.id}`} className="block group h-full">
 
-            <div className="h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+            <div className="h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-xs hover:shadow-sm transition">
 
                 <Image
                     src={product.image_url}
