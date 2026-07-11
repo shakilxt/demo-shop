@@ -1,5 +1,14 @@
 import { Suspense } from 'react';
 import ProductDetailsContent from './product-details-content';
+import { getAllProductIds } from '@/lib/services/productServices';
+
+export async function generateStaticParams() {
+    const products = await getAllProductIds();
+
+    return products.map((product) => ({
+        id: String(product.id)
+    }));
+}
 
 export default async function ProductDetails({ params }) {
     return (
