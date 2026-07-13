@@ -1,6 +1,7 @@
 import { logoutAdmin } from '@/app/actions/admin/authActions';
 import SidebarLinks from './sidebar-links';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function AdminSidebar() {
     return (
@@ -13,7 +14,9 @@ export default function AdminSidebar() {
             </div>
 
             <nav className="flex-1 p-4 space-y-1">
-                <SidebarLinks />
+                <Suspense>
+                    <SidebarLinks />
+                </Suspense>
             </nav>
 
             <div className="p-4 flex items-center justify-center">

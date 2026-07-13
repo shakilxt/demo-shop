@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import { getProducts } from '@/lib/services/productServices';
 import ProductsTable from '@/components/admin/products/products-table';
 import { Suspense } from 'react';
 
 export default async function ProductsPage() {
-
-    const products = await getProducts();
 
     return (
         <div className="max-w-5xl mx-auto">
@@ -21,7 +18,7 @@ export default async function ProductsPage() {
             </div>
 
             <Suspense>
-                <ProductsTable products={products} />
+                <ProductsTable />
             </Suspense>
 
         </div>

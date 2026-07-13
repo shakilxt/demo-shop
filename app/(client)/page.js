@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { ProductGrid } from './(components)/product-grid';
+import { ProductGrid } from '../../components/client/product-grid';
 
 export default async function HomePage() {
 

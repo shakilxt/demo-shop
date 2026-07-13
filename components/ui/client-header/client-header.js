@@ -2,16 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { usePathname } from 'next/navigation';
 import NavLink from "./nav-link";
 import { Suspense } from "react";
 
-export default function MainHeader() {
+export default function ClientHeader() {
 
     const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname();
-
-    if (pathname && pathname.startsWith('/admin')) return null;
 
     return (
         <header className="sticky top-0 z-50 border-b border-stone-100 bg-white/95 shadow-sm backdrop-blur">

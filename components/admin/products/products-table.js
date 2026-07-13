@@ -1,9 +1,12 @@
 
+import Link from "next/link";
 import DeleteButton from "../delete-button";
 import Image from "next/image";
-import Link from "next/link";
+import { getProducts } from "@/lib/services/productServices";
 
-export default function ProductsTable({ products }) {
+export default async function ProductsTable() {
+
+    const products = await getProducts();
 
     return (
         <div className="overflow-hidden rounded-lg border border-stone-200 bg-white">
