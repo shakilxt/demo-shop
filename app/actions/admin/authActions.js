@@ -49,8 +49,6 @@ export async function loginAdmin(prevState, formData) {
         if (!isValid) return { error: 'Invalid email or password' };
 
         await createSession(admin);
-
-        console.log(`✅ Admin logged in: ${admin.email}`);
     } catch (error) {
         console.error('Login Error:', error);
         return { error: 'Could not log in. Please try again.' };
